@@ -1,0 +1,32 @@
+<div class="container">
+  <form [formGroup]="drapForm">
+    <div>
+      <mat-form-field>
+        <mat-select placeholder="select College" formControlName="college" (selectionChange)="onSelectCollege()">
+          <mat-option *ngFor="let clg of collegelist" [value]="clg.id">{{clg.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-select placeholder="Select Department" formControlName="department" (selectionChange)="onSelectDepartment()">
+          <mat-option *ngFor="let dept of departments" [value]="dept.deptId">{{dept.deptName}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-select placeholder="select Section" formControlName="section" (selectionChange)="onSelectSection()">
+          <mat-option *ngFor="let sec of sections" [value]="sec.secId">{{sec.secName}}</mat-option> 
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field >
+        <mat-select placeholder="select users" formControlName="user" >
+          <mat-option *ngFor="let user of users" [value]="user.userId">{{user.userName}}</mat-option> 
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+</div> 
